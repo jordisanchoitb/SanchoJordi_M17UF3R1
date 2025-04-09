@@ -9,16 +9,23 @@ public class InputManager : MonoBehaviour, PlayerControlers.IPlayerActions
     private PlayerControlers pControlers;
     private Rigidbody rigidBody;
     [NonSerialized] public Vector3 inputMovement;
+    [NonSerialized] public bool isRun;
+    [NonSerialized] public bool isDance;
 
     private void Awake()
     {
         pControlers = new PlayerControlers();
         rigidBody = GetComponent<Rigidbody>();
         pControlers.Player.SetCallbacks(this);
+        isRun = false;
+        isDance = false;
     }
     private void FixedUpdate()
     {
-        Movement();
+        if (!isDance)
+        {    
+           Movement();
+        }
     }
 
     private void OnEnable()
@@ -29,6 +36,8 @@ public class InputManager : MonoBehaviour, PlayerControlers.IPlayerActions
     private void OnDisable()
     {
         pControlers.Disable();
+        isRun = false;
+        isDance = false;
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -39,5 +48,24 @@ public class InputManager : MonoBehaviour, PlayerControlers.IPlayerActions
     public void Movement()
     {
         rigidBody.MovePosition(rigidBody.position + speed * Time.deltaTime * inputMovement.normalized);
+    }
+
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        if (context.performed) 
+            isRun = true;
+        else if (context.canceled) 
+            isRun = false;
+    }
+
+    public void OnDance(InputAction.CallbackContext context)
+    {
+        if (context.performed) 
+        {
+            if (!isDance) 
+                isDance = true;
+            else 
+                isDance = false;
+        }
     }
 }

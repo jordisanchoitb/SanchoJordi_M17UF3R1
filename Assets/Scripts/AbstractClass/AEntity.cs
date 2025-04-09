@@ -14,7 +14,16 @@ public abstract class AEntity : MonoBehaviour, IHurt
         healthBar.value = health;
         if (health <= 0)
         {
-            this.gameObject.SetActive(false);
+            if (TryGetComponent(out Animator animator))
+            {
+                animator.SetTrigger("Death");
+            }
+            else
+            {
+                Debug.LogError($"Al morir, no se encontró el componente Animator dentro de: {gameObject.name}");
+                this.gameObject.SetActive(false);
+            }
+
         }
     }
 

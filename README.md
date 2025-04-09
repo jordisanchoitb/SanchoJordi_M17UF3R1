@@ -6,3 +6,5 @@
 
 - Clic esquerre - Atacar els enemics
 
+## **Credits**
+Model del personatge principal i animacions [**Mixamo**](www.mixamo.com)
