@@ -20,10 +20,11 @@ public class AnimationManager : MonoBehaviour
 
         if (inputManager.inputMovement.x != 0 || inputManager.inputMovement.z != 0)
         {
-            if (inputManager.isRun) 
+            if (inputManager.isRun && !inputManager.isCrouching) 
                 animator.SetBool("IsRun", true);
             else 
                 animator.SetBool("IsRun", false);
+
             animator.SetBool("IsWalk", true);
         }
         else
@@ -36,5 +37,10 @@ public class AnimationManager : MonoBehaviour
             animator.SetBool("IsDance", true);
         else
             animator.SetBool("IsDance", false);
+
+        if (inputManager.isCrouching)
+            animator.SetBool("IsCrouching", true);
+        else
+            animator.SetBool("IsCrouching", false);
     }
 }
