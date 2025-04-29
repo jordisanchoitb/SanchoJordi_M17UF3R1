@@ -38,9 +38,19 @@ public class AnimationManager : MonoBehaviour
         else
             animator.SetBool("IsDance", false);
 
-        if (inputManager.isCrouching)
+        if (inputManager.isCrouching && !inputManager.isJumping)
             animator.SetBool("IsCrouching", true);
         else
             animator.SetBool("IsCrouching", false);
+
+        if (inputManager.isJumping && !inputManager.isCrouching)
+            animator.SetBool("IsJump", true);
+        else
+            animator.SetBool("IsJump", false);
+
+        if (inputManager.isFalling)
+            animator.SetBool("IsFall", true);
+        else
+            animator.SetBool("IsFall", false);
     }
 }

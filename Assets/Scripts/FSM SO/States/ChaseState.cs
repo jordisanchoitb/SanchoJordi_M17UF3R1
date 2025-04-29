@@ -6,11 +6,13 @@ public class ChaseState : StateSO
 {
     public override void OnStateEnter(Enemy enemy)
     {
+        enemy.GetComponent<Animator>().SetBool("IsRunning", true);
     }
 
     public override void OnStateExit(Enemy enemy)
     {
         enemy.StopMoving();
+        enemy.GetComponent<Animator>().SetBool("IsRunning", false);
     }
 
     public override void OnStateUpdate(Enemy enemy)

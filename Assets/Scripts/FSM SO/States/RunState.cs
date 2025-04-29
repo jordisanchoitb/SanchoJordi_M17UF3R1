@@ -8,11 +8,13 @@ public class RunState : StateSO
 {
     public override void OnStateEnter(Enemy enemy)
     {
+        enemy.GetComponent<Animator>().SetBool("IsWalking", true);
     }
 
     public override void OnStateExit(Enemy enemy)
     {
         enemy.StopMoving();
+        enemy.GetComponent<Animator>().SetBool("IsWalking", false);
     }
 
     public override void OnStateUpdate(Enemy enemy)

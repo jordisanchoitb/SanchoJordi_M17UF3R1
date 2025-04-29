@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,6 +20,7 @@ public class InputManager : MonoBehaviour, PlayerControlers.IPlayerActions
     [NonSerialized] public bool isAiming;
     [NonSerialized] public bool isJumping;
     [NonSerialized] public bool isCrouching;
+    [NonSerialized] public bool isFalling;
 
     private void Awake()
     {
@@ -62,6 +64,7 @@ public class InputManager : MonoBehaviour, PlayerControlers.IPlayerActions
         {
             rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+        StartCoroutine(IsFalling());
     }
     void ChangeSpeedRun()
     {
@@ -147,6 +150,19 @@ public class InputManager : MonoBehaviour, PlayerControlers.IPlayerActions
         else if (context.canceled)
         {
             isJumping = false;
+        }
+    }
+
+    IEnumerator IsFalling()
+    {
+        yield return new WaitForSeconds(0.1f);
+        if (!IsGrounded())
+        {
+            isFalling = true;
+        }
+        else
+        {
+            isFalling = false;
         }
     }
 
