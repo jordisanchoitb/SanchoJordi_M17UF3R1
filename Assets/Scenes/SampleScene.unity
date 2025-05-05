@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.03
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -6885,6 +6885,7 @@ GameObject:
   - component: {fileID: 1965322232}
   - component: {fileID: 1965322233}
   - component: {fileID: 1965322234}
+  - component: {fileID: 1965322235}
   m_Layer: 0
   m_Name: CameraMinimap
   m_TagString: Untagged
@@ -6901,7 +6902,7 @@ Transform:
   m_GameObject: {fileID: 1965322229}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1, y: 65.9, z: -0.65917206}
+  m_LocalPosition: {x: 1, y: 51.56, z: -0.65917206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6968,8 +6969,8 @@ PositionConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: 1, y: 65.9, z: -0.65917206}
-  m_TranslationOffset: {x: 1.8, y: 65.630005, z: 13.330828}
+  m_TranslationAtRest: {x: 1, y: 51.56, z: -0.65917206}
+  m_TranslationOffset: {x: 1.8, y: 51.29, z: 13.330828}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 0
   m_AffectTranslationZ: 1
@@ -6978,6 +6979,19 @@ PositionConstraint:
   m_Sources:
   - sourceTransform: {fileID: 299530705}
     weight: 1
+--- !u!114 &1965322235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965322229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc719318f58c024f928f23a1f768b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FogEnabled: 0
 --- !u!1 &1986366797
 GameObject:
   m_ObjectHideFlags: 0
