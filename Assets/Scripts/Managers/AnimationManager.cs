@@ -52,5 +52,10 @@ public class AnimationManager : MonoBehaviour
             animator.SetBool("IsFall", true);
         else
             animator.SetBool("IsFall", false);
+
+        if (inputManager.isAiming)
+            animator.SetBool("IsAiming", true);
+        else
+            animator.SetBool("IsAiming", false);
     }
 }
