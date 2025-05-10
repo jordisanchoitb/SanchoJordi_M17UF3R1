@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AttackState", menuName = "StatesSO/Attack")]
 public class AttackState : StateSO
 {
-    private float attackTime = 0.5f;
+    private float attackTime = 1.5f;
     private Coroutine attackCoroutine;
     public override void OnStateEnter(Enemy enemy)
     {
@@ -26,7 +26,6 @@ public class AttackState : StateSO
         yield return new WaitForSeconds(attackTime);
         enemy.target.GetComponent<Player>().Hurt(10);
         Debug.Log("Te reviento a chancletaso");
-        attackCoroutine = enemy.target.GetComponent<Player>().StartCoroutine(Attack(enemy));
     }
 
 

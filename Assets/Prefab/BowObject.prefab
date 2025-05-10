@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 48b0efb26ccab1448b1587f1ea0bac00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.62
+      value: -1.16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 48b0efb26ccab1448b1587f1ea0bac00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.55
+      value: 3.81
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 48b0efb26ccab1448b1587f1ea0bac00, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.32
+      value: -6.3235226
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 48b0efb26ccab1448b1587f1ea0bac00, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42,11 +42,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 48b0efb26ccab1448b1587f1ea0bac00, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 48b0efb26ccab1448b1587f1ea0bac00, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 48b0efb26ccab1448b1587f1ea0bac00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -74,6 +74,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 48b0efb26ccab1448b1587f1ea0bac00, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4379540915423541945}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 48b0efb26ccab1448b1587f1ea0bac00, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6092815708793760399}
   m_SourcePrefab: {fileID: 100100000, guid: 48b0efb26ccab1448b1587f1ea0bac00, type: 3}
 --- !u!1 &370743733417765945 stripped
 GameObject:
@@ -122,3 +125,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6092815708793760399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370743733417765945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece91ec2b9422494eb1b806a57c3ae89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

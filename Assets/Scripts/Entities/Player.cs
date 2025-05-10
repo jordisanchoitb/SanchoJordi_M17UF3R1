@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : AEntity
 {
     public static Player instance;
+
     public override void OnEnable()
     {
         base.OnEnable();
