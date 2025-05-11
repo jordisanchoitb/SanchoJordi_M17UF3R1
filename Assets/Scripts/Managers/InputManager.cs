@@ -56,7 +56,9 @@ public class InputManager : MonoBehaviour, PlayerControlers.IPlayerActions
     {
         if (!isCrouching)
             ChangeSpeedRun();
-        rigidBody.MovePosition(rigidBody.position + speed * Time.deltaTime * inputMovement.normalized);
+
+        Vector3 moveDirection = transform.TransformDirection(inputMovement.normalized);
+        rigidBody.MovePosition(rigidBody.position + speed * Time.deltaTime * moveDirection);
     }
     public void Jump()
     {

@@ -14,7 +14,6 @@ public class WeaponManager : MonoBehaviour, PlayerControlers.IWeaponActions
     private GameObject weaponNonEquiped;
     private InputManager inputManager;
     public RawImage weaponImage;
-    public bool weaponEquiped = false;
     public bool weaponIsObtained = false;
     public GameObject bulletSpawnPoint;
     public GameObject bulletPrefab;
@@ -50,7 +49,6 @@ public class WeaponManager : MonoBehaviour, PlayerControlers.IWeaponActions
     private void OnEnable()
     {
         pControlers.Enable();
-        weaponEquiped = false;
         weaponIsObtained = false;
     }
 
@@ -61,7 +59,7 @@ public class WeaponManager : MonoBehaviour, PlayerControlers.IWeaponActions
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && weaponIsObtained && inputManager.isAiming)
         {
             GameObject arrowObj = Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, Quaternion.LookRotation(aimDirection.forward));
             ArrowBullet arrow = arrowObj.GetComponent<ArrowBullet>();

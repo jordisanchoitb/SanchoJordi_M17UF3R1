@@ -5863,8 +5863,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 299530705}
-  rotationSpeed: 30
-  topClamp: 70
+  rotationSpeed: 50
+  topClamp: 40
   bottomClamp: -40
 --- !u!1 &1921846892 stripped
 GameObject:
