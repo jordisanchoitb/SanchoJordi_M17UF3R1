@@ -6,6 +6,7 @@ public class DieState : StateSO
 {
     public override void OnStateEnter(Enemy enemy)
     {
+        enemy.GetComponent<Animator>().SetTrigger("Death");
         Debug.Log("Abandoné este mundo de miseria y desesperación");
     }
 

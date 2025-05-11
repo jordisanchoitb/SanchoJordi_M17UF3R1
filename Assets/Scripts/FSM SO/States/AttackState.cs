@@ -4,11 +4,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AttackState", menuName = "StatesSO/Attack")]
 public class AttackState : StateSO
 {
-    private float attackTime = 0.5f;
+    private float attackTime = 1.5f;
     private Coroutine attackCoroutine;
     public override void OnStateEnter(Enemy enemy)
     {
-        attackCoroutine = enemy.StartCoroutine(Attack(enemy.target));
+        attackCoroutine = enemy.StartCoroutine(Attack(enemy));
     }
 
     public override void OnStateExit(Enemy enemy)
@@ -20,12 +20,12 @@ public class AttackState : StateSO
     {
     }
 
-    private IEnumerator Attack(GameObject target)
+    private IEnumerator Attack(Enemy enemy)
     {
+        enemy.GetComponent<Animator>().SetTrigger("IsAttack");
         yield return new WaitForSeconds(attackTime);
-        target.GetComponent<Player>().Hurt(10);
+        enemy.target.GetComponent<Player>().Hurt(10);
         Debug.Log("Te reviento a chancletaso");
-        attackCoroutine = target.GetComponent<Player>().StartCoroutine(Attack(target));
     }
 
 
