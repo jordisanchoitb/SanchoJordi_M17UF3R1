@@ -18,7 +18,6 @@ public class ArrowBullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("colisionado con:" + collision.gameObject.name);
         if (collision.gameObject.TryGetComponent(out Enemy enemy))
         {
             enemy.Hurt(10f);

@@ -29,6 +29,10 @@ public class InputManager : MonoBehaviour, PlayerControlers.IPlayerActions
         pControlers.Player.SetCallbacks(this);
         isRun = false;
         isDance = false;
+        isAiming = false;
+        isJumping = false;
+        isCrouching = false;
+        isFalling = false;
         initialSpeed = speed;
     }
     private void FixedUpdate()
@@ -51,6 +55,10 @@ public class InputManager : MonoBehaviour, PlayerControlers.IPlayerActions
         pControlers.Disable();
         isRun = false;
         isDance = false;
+        isAiming = false;
+        isJumping = false;
+        isCrouching = false;
+        isFalling = false;
     }
     public void Movement()
     {
